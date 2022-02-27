@@ -2,7 +2,7 @@ package com.itheima_02;
 
 import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable<Student>{
     private String name;
     private int age;
 
@@ -52,5 +52,11 @@ public class Student {
                 '}';
 
 
+
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return -1;
     }
 }

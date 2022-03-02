@@ -69,5 +69,4 @@ public class ThreadTest05 implements Callable<Boolean> {
         ser.shutdownNow();
 
     }
-
 }

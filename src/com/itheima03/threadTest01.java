@@ -19,6 +19,5 @@ public class threadTest01 extends Thread{
         for (int i = 0; i < 200; i++) {
             System.out.println("---------主线程执行中----------"+i);
         }
-
     }
 }

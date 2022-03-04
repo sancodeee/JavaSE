@@ -36,7 +36,7 @@ public class lamdaDemo {
         like.lamda();       //外部实现类对象调用方法
 
         Like2 like2 = new Like2();
-        like.lamda();       //静态内部类对象调用方法
+        like2.lamda();       //静态内部类对象调用方法
 
 
 //    4、局部（方法）内部类
@@ -64,7 +64,7 @@ public class lamdaDemo {
 //        6、lamda表达式
         like = ()->{
             System.out.println("i like lamda5");
-        };
+        };//相当于直接创建 实现接口的类 的对象，其中大括号里时重写的抽象方法
         like.lamda();
 
 

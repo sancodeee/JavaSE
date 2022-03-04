@@ -11,6 +11,13 @@ public class ThreadTest04 implements Runnable {
     @Override
     public void run() {
 
+//        模拟网络延时
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         while (true) {
 
             if (ticketNum <= 0) {
@@ -22,11 +29,12 @@ public class ThreadTest04 implements Runnable {
 
     }
 
+
     public static void main(String[] args) {
 
         ThreadTest04 threadTest04 = new ThreadTest04();
 
-//        创建多个线程
+//      创建多个线程
         new Thread(threadTest04, "小明").start();
         new Thread(threadTest04, "小红").start();
         new Thread(threadTest04, "小航").start();

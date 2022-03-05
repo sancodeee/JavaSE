@@ -1,7 +1,7 @@
 package com.itheima03;
 
 
-import com.sun.org.apache.bcel.internal.generic.GOTO;
+//守护线程  一般不设置，默认都是用户线程
 
 public class DaemonDemo {
 

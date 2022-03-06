@@ -1,6 +1,6 @@
 package com.itheima03;
 
-
+//实现Runnable接口
 
 public class threadTest03 implements Runnable {
 

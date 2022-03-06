@@ -1,23 +1,25 @@
 package com.itheima03;
 
 // 静态代理案例：多线程实现原理
-
+//代理对象和真实对象要实现同一个接口
 
 public class StaticProxy {
     public static void main(String[] args) {
 
-        weddingCompany weddingCompany = new weddingCompany(new You());
+        weddingCompany weddingCompany = new weddingCompany(new You());//括号里传入要代理的对象
         weddingCompany.HappyMarry();
 
-
     }
-//    结婚 接口
-    interface Marry{
+
+
+    //    结婚 接口
+    interface Marry {
         void HappyMarry();
     }
 
-//     真实角色   真实结婚对象类
-static class You implements Marry{
+
+    //     真实角色   真实结婚对象类
+    static class You implements Marry {
 
         @Override
         public void HappyMarry() {
@@ -25,29 +27,31 @@ static class You implements Marry{
         }
     }
 
-//    代理角色   代理真实角色结婚
-static class weddingCompany implements Marry{
+
+    //    代理角色   代理真实角色结婚
+    static class weddingCompany implements Marry {
 
         private Marry target;  //代理的目标
 
-        weddingCompany(Marry target){
+        weddingCompany(Marry target) {
             this.target = target;
         }              //带参构造方法
 
-    @Override
-    public void HappyMarry() {
-        before();
-        this.target.HappyMarry();
-        after();
-    }
+        @Override
+        public void HappyMarry() {
+            before();
+            this.target.HappyMarry();
+            after();
+        }
 
-    private  void after(){
-        System.out.println("结婚之后直接洞房");
+        private void after() {
+            System.out.println("结婚之后直接洞房");
+        }
+
+        private void before() {
+            System.out.println("结婚之前先去定亲");
+        }
     }
-    private void before(){
-        System.out.println("结婚之前先去定亲");
-    }
-}
 
 
 

@@ -1,12 +1,16 @@
 package com.itheima03;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+//实现Callable接口,利用线程池实现
+
+
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.*;
+
+//实现Callable接口
 
 public class ThreadTest05 implements Callable<Boolean> {
     private String url;   //网络图片地址
@@ -17,6 +21,8 @@ public class ThreadTest05 implements Callable<Boolean> {
         this.url = url;
     }  //带参构造方法
 
+
+//    重写call()方法
     @Override
     public Boolean call() throws Exception {
 
@@ -42,20 +48,20 @@ public class ThreadTest05 implements Callable<Boolean> {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
-//       创建三个线程
+//        创建三个线程
         ThreadTest05 t1 = new ThreadTest05("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201701%2F28%2F20170128215011_2Fh8T.png&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648692836&t=990d238f51723a8fc30796aa2c09b857", "1.jpg");
         ThreadTest05 t2 = new ThreadTest05("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi2.hdslb.com%2Fbfs%2Farchive%2F9ee06b6735d4058cf9ede0ce8d0308d31a2d3e21.jpg&refer=http%3A%2F%2Fi2.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648692f1e258acf8541ddc146e4960837567a8836&t=", "2.jpg");
         ThreadTest05 t3 = new ThreadTest05("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi2.hdslb.com%2Fbfs%2Farchive%2F9ee06b6735d4058cf9ede0ce8d0308d31a2d3e21.jpg&refer=http%3A%2F%2Fi2.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648692f1e258acf8541ddc146e4960837567a8836&t=", "3.jpg");
 
-//        创建执行服务
-        ExecutorService ser = Executors.newFixedThreadPool(3);
+//         创建执行服务线程池
+        ExecutorService service = Executors.newFixedThreadPool(3);
 
-//        提交执行结果
-        Future<Boolean> r1 = ser.submit(t1);
-        Future<Boolean> r2 = ser.submit(t2);
-        Future<Boolean> r3 = ser.submit(t3);
+//         提交执行结果
+        Future<Boolean> r1 = service.submit(t1);
+        Future<Boolean> r2 = service.submit(t2);
+        Future<Boolean> r3 = service.submit(t3);
 
-//        获取结果
+//         获取结果
         boolean rs1 = r1.get();
         boolean rs2 = r2.get();
         boolean rs3 = r3.get();
@@ -65,8 +71,8 @@ public class ThreadTest05 implements Callable<Boolean> {
         System.out.println(rs3);
 
 
-//        关闭服务
-        ser.shutdownNow();
+//         关闭服务
+        service.shutdownNow();
 
     }
 }

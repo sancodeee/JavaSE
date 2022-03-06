@@ -1,7 +1,5 @@
 package com.itheima03;
 
-import com.sun.deploy.net.proxy.ProxyUnavailableException;
-
 import java.util.concurrent.*;
 
 public class ThreadTest06 {

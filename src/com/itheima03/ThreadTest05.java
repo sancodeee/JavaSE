@@ -49,7 +49,7 @@ public class ThreadTest05 implements Callable<Boolean> {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
 //        创建三个线程
-        ThreadTest05 t1 = new ThreadTest05("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201701%2F28%2F20170128215011_2Fh8T.png&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648692836&t=990d238f51723a8fc30796aa2c09b857", "1.jpg");
+        ThreadTest05 t1 = new ThreadTest05("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201701%2F28%2F20170128215011_2Fh8T.png&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648692836&t=990d238f51723a8fc30796aa2c09b857", "lib/1.jpg");
         ThreadTest05 t2 = new ThreadTest05("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi2.hdslb.com%2Fbfs%2Farchive%2F9ee06b6735d4058cf9ede0ce8d0308d31a2d3e21.jpg&refer=http%3A%2F%2Fi2.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648692f1e258acf8541ddc146e4960837567a8836&t=", "2.jpg");
         ThreadTest05 t3 = new ThreadTest05("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi2.hdslb.com%2Fbfs%2Farchive%2F9ee06b6735d4058cf9ede0ce8d0308d31a2d3e21.jpg&refer=http%3A%2F%2Fi2.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648692f1e258acf8541ddc146e4960837567a8836&t=", "3.jpg");
 
